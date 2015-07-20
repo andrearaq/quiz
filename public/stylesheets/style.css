@@ -1,14 +1,15 @@
 * { margin: 0; padding: 0; }
 body { font: 16px Georgia, serif, "Lucida Grande", Helvetica, Arial, sans-serif; }
 
-a {
-  color: #00B7FF;
-}
+a { color: #00B7FF; }
 
-#page_wrap { margin: 2% auto; color:white; }
+#page_wrap { margin: 2% auto; color: white; }
 #page_wrap > .main { border: 1px solid #999; padding: 1%; margin-bottom: 1px; color: black; }
 
 section >div { padding: 20px; }
 header, nav, section { background: #eee; text-align: center; }
 footer { background: #efe; text-align: center; }
 nav span { margin: 0px 10px 0px 0px; }
+
+.caja1 { float: left; width: 25%; } 
+.caja2 { float: right; width: 65%; text-align: left; line-height: 1.5; }
