@@ -1,9 +1,12 @@
 // construcción base datos sqlite
 var path = require('path');
+var Sequelize = require('sequelize');
 
 // Postgres DATABASE_URL = postgres://user:passwd@host:port/database
 // SQLite   DATABASE_URL = sqlite://:@:/
-var url = process.env.DATABASE_URL.match(/(.*)\:\/\/(.*?)\:(.*)@(.*)\:(.*)\/(.*)/);
+var datosDB= "postgres://dkpsnniecxsemv:WFIlPZkKRfVDg-BOr-wKIL3EAd@ec2-107-21-125-143.compute-1.amazonaws.com:5432/d8ss2uto665bem";
+//var url = process.env.DATABASE_URL.match(/(.*)\:\/\/(.*?)\:(.*)@(.*)\:(.*)\/(.*)/);
+var url = datosDB.match(/(.*)\:\/\/(.*?)\:(.*)@(.*)\:(.*)\/(.*)/);
 var DB_name  = (url[6]||null);
 var user     = (url[2]||null);
 var pwd      = (url[3]||null);
@@ -12,8 +15,6 @@ var dialect  = (url[1]||null);
 var port     = (url[5]||null);
 var host     = (url[4]||null);
 var storage  = process.env.DATABASE_STORAGE;
-
-var Sequelize = require('sequelize');
 
 // Usar BBDD SQLite
 var sequelize = new Sequelize(null, null, null,
