@@ -9,6 +9,7 @@ router.get('/', function(req, res) {
 router.get('/author', function(req, res) {
   res.render('author');
 });
+router.param('quizId', quizController.load);
 router.get('/quizes', quizController.index);
 router.get('/quizes/:quizId(\\d+)', quizController.show);
 router.get('/quizes/:quizId(\\d+)/answer', quizController.answer);
