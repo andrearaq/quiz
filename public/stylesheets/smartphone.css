@@ -3,3 +3,5 @@ body { background: #333; }
 h2 span, section h3 { display: none; }
 body { font-size: xx-large; }
 footer, input { font-size: large; }
+.caja2 { font-size: medium; }
+img { width: 50px; height: 65px; }
