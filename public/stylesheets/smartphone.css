@@ -1,7 +1,11 @@
-body { background: #333; }
-#page_wrap:after { content: "SmartPhone Layout"; }
-h2 span, section h3 { display: none; }
-body { font-size: xx-large; }
-footer, input { font-size: large; }
+body     { background: #333; }
+
+#page-wrap:after { content: "Smartphone Layout"; }
+
+h2 span, section h3, label.rem    { display: none; }
+body             { font-size: xx-large; }
+input, button    { font-size: x-large; }
+footer           { font-size: large; }
 .caja2 { font-size: medium; }
 img { width: 50px; height: 65px; }
+#btnCrear { float: none; }
