@@ -1,5 +1,6 @@
 //controlador
 var models = require('../models/models.js');
+var QS = require('querystring');
 
 // Autoload - factoriza el código si ruta incluye :quizId
 exports.load = function(req, res, next, quizId) {
@@ -15,11 +16,13 @@ exports.load = function(req, res, next, quizId) {
 
 // GET /quizes
 exports.index = function(req, res) {
-  models.Quiz.findAll().then(
-    function(quizes) {
-      res.render('quizes/index', { quizes: quizes});
-    }
-  ).catch(function(error) { next(error);})
+  var search = "%"+req.query.buscar+"%";
+  search = search.replace(" ","%");
+	  models.Quiz.findAll({where:["pregunta LIKE ?", search], order:"`pregunta`"}).then(
+		function(quizes) {
+		  res.render('quizes/index', { quizes: quizes});
+		}
+	  ).catch(function(error) { next(error);});
 };
 
 // GET /quizes/:id
