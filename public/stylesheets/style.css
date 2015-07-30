@@ -10,6 +10,7 @@ section >div { padding: 20px; }
 header, nav, section { background: #eee; text-align: center; }
 footer { background: #efe; text-align: center; }
 nav span { margin: 0px 10px 0px 0px; }
+#ErrorMsgs { color: #f61; font-size: smaller; }
 
 .caja1 { float: left; width: 25%; } 
 .caja2 { float: right; width: 65%; text-align: left; line-height: 1.5; }
