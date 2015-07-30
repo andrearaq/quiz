@@ -18,7 +18,7 @@ exports.load = function(req, res, next, quizId) {
 exports.index = function(req, res) {
   var search = "%"+req.query.buscar+"%";
   search = search.replace(" ","%");
-	  models.Quiz.findAll({where:["pregunta LIKE ?", search], order:"`pregunta`"}).then(
+	  models.Quiz.findAll({where:["pregunta LIKE ?", search], order:"pregunta"}).then(
 		function(quizes) {
 		  res.render('quizes/index.ejs', { quizes: quizes, errors:[] });
 		}
