@@ -6,6 +6,9 @@ h2 span, section h3, label.rem    { display: none; }
 body             { font-size: xx-large; }
 input, button    { font-size: x-large; }
 footer           { font-size: large; }
-.caja2 { font-size: medium; }
+.caja2 { font-size: xmedium; }
 img { width: 50px; height: 65px; }
 #btnCrear { float: none; }
+
+table { font-size: medium; }
+table button { font-size: medium; }

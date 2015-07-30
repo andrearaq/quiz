@@ -14,5 +14,6 @@ nav span { margin: 0px 10px 0px 0px; }
 
 .caja1 { float: left; width: 25%; } 
 .caja2 { float: right; width: 65%; text-align: left; line-height: 1.5; }
-
+.temacol { font-size: smaller; }
+table button { font-size: medium; }
 #btnCrear { float: left; }

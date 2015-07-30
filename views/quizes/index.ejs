@@ -9,9 +9,10 @@
 </form>
 <br/>
 <table>
-<tr><th>Lista de preguntas</th></tr>
+<tr><th>Lista de preguntas</th><th>Tema</th></tr>
   <% var i; for (i=0; i < quizes.length; i++) { %>        
      <tr><td><a href="quizes/<%= quizes[i].id %>"><%= quizes[i].pregunta %></a></td>
+	 <td class="temacol"><%= quizes[i].tema %></td>
 	 <td><a href="quizes/<%= quizes[i].id %>/edit"><button>Editar</button></a></td>
 	 <td><form method="post" action="quizes/<%= quizes[i].id %>?_method=delete">
 		 <button type="submit" onClick="return confirm('Borrar pregunta: <%= quizes[i].pregunta %>??');">Borrar</button>
