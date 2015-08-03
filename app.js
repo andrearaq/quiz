@@ -29,6 +29,23 @@ app.use(session());
 app.use(methodOverride('_method'));
 app.use(express.static(path.join(__dirname, 'public')));
 
+//comprobar tiempo sesion -- auto_logout
+app.use(function(req, res, next) {
+	var now = new Date().getTime();
+    if(req.session.user){// si estamos logueados
+        if (!req.session.time){//primera vez se guarda el tiempo
+            req.session.time = now;
+        } else {
+            if (now-req.session.time > 120000) {//se pasó el tiempo (2min=120000ms)
+                delete req.session.user;     //eliminamos la sesion del usuario
+            } else {
+                req.session.time = now;
+            }
+        }
+    }
+    next();
+});
+
 // Helpers dinamicos:
 app.use(function(req, res, next) {
 
